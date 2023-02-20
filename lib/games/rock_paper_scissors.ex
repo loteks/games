@@ -1,4 +1,13 @@
 defmodule Games.RockPaperScissors do
+  @moduledoc """
+    Module implements Rock Paper Scissors game
+  """
+
+  @doc """
+  play function asks user to input rock, paper or scissors
+  then compares to random rock paper or scissors to determine winner
+  """
+  @spec play :: String.t()
   def play() do
     player2 = Enum.random([:rock, :paper, :scissors])
     IO.puts(player2)
@@ -8,7 +17,6 @@ defmodule Games.RockPaperScissors do
       IO.gets("Enter your guess: ")
       |> String.trim()
       |> String.to_existing_atom()
-      |> IO.inspect()
 
     # functional core
     case {player1, player2} do
